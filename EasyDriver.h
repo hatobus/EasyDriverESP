@@ -9,22 +9,19 @@
 
 class EasyDriver {
 public:
-    EasyDriver(int PIN, bool MS1, bool MS2, bool DIR, double step_angle);
+    EasyDriver(int PIN, int MS1, int MS2, int DIR, double step_angle);
     void Rotate_INV();
     void Motor_Drive_Rotate(int RPM, int rotate_num);
     void Motor_Drive_Time(int RPM, double rotate_time);
-    int Make_Step_Rotate(double Rotate);
-    void set_microstep(int MS1_state, int MS2_state);
+    void set_microstep(bool MS1_state, bool MS2_state);
 
 private:
 
     bool _MS1, _MS2;
-
     bool _DIR;
-
     int STP_PIN;
-
-    double one_cycle_step, basic_step_angle;
+    int one_cycle_step;
+    double basic_step_angle;
 
 };
 #endif //EASYDRIVEESP_EASYDRIVER_H

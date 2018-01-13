@@ -6,7 +6,7 @@
 
 #include "EasyDriver.h"
 
-EasyDriver::EasyDriver(int PIN, bool MS1, bool MS2, bool DIR, double angle=1.8) {
+EasyDriver::EasyDriver(int PIN, int MS1, int MS2, int DIR, double angle=1.8) {
 
     pinMode(PIN, OUTPUT);
     pinMode(MS1, OUTPUT);
@@ -19,16 +19,6 @@ EasyDriver::EasyDriver(int PIN, bool MS1, bool MS2, bool DIR, double angle=1.8) 
     STP_PIN = PIN;
     basic_step_angle = angle;
 
-}
-
-int EasyDriver::Make_Step_Rotate(double Rotate){
-    // To make step cycle with number of Rotate
-
-    int sum_of_step = Rotate * one_cycle_step;
-
-    STEP_NUM = sum_of_step;
-
-    return sum_of_step;
 }
 
 void EasyDriver::Motor_Drive_Time(int RPM, double Rotate_Time) {
@@ -89,7 +79,7 @@ void EasyDriver::Rotate_INV() {
     digitalWrite(_DIR, !digitalRead(_DIR));
 }
 
-void EasyDriver::set_microstep(int MS1_state, int MS2_state) {
+void EasyDriver::set_microstep(bool MS1_state, bool MS2_state) {
 
     // MS1_state and MS2_state pin is to set motor step angle
     //  +------+------+--------------------------+
@@ -105,7 +95,7 @@ void EasyDriver::set_microstep(int MS1_state, int MS2_state) {
     //  +------+------+--------------------------+
 
     // From Official Web Page.
-    // Default Both Value is HIGH.
+    // Default Both Value is LOW.
     //
 
     if(MS1_state == 0 && MS2_state == 0) basic_step_angle = 7.5;
@@ -118,5 +108,3 @@ void EasyDriver::set_microstep(int MS1_state, int MS2_state) {
     digitalWrite(_MS1, MS1_state);
     digitalWrite(_MS2, MS2_state);
 }
-
-
