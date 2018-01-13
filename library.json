@@ -35,5 +35,7 @@
     ],
 
     "homepage": "https://github.com/hatobus/EasyDriverESP",
-    "platforms": "*"
+    "platforms": "*",
+
+    "description": "Library to use EasyDriver for sparkfun on the Arduino/ESP series board"
 }
