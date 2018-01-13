@@ -5,10 +5,12 @@
         "email": "s1240056@gmail.com",
         "url": "https://github.com/hatobus"
     },
+    {
         "name": "Hato Bus",
         "email": null,
         "url": "https://twitter.com/flying_hato_bus"
-],
+    }
+    ],
 
     "repository":
     {
