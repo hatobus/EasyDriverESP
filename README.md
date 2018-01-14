@@ -20,10 +20,10 @@
 ```
 
  - EasyDriver.cpp or EasyDriver.h
-     It is main file for this library.
+    - It is main file for this library.
 
  - example folder and example.ino
-     It is example file for Arduino.
+    - It is example file for Arduino.
 
  - src folder and EasyDriver.ino
-     It is example file for plarformio.
+    - It is example file for plarformio.
