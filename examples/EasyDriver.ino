@@ -1,13 +1,14 @@
 #include <EasyDriver.h>
 
 #define stp 2
-#define dir 3
+#define dir 15
 #define MS1 4
 #define MS2 5
 
+EasyDriver ed(stp, MS1, MS2, dir, 1.8);
+
 void setup() {
   // put your setup code here, to run once:
-   EasyDriver.EasyDriver(stp, MS1, MS2, dir, step = 1.8);
 
   // MS1_state and MS2_state pin is to set motor step angle
     //  +------+------+--------------------------+
@@ -26,23 +27,23 @@ void setup() {
     // Default Both Value is HIGH.
     //
 
-  EasyDriver.set_microstep(LOW, LOW);
+    ed.set_microstep(LOW, LOW);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   // Rotate 5sec 120 rpm
-  EasyDriver.Motor_Drive_Time(120, 5.0);
+    ed.Motor_Drive_Time(120, 5.0);
 
   delay(3000);
 
   // Rotate 5 times 120 rpm
-  EasyDriver.Motor_Drie_Rotate(120, 5.0);
+  ed.Motor_Drive_Rotate(120, 5.0);
 
   // Inverse rotate direction 
-  EasyDriver.Rotate_INV();
+  ed.Rotate_INV();
 
-  EasyDriver.Motor_Drive_Time(120, 5.0);
+  ed.Motor_Drive_Time(120, 5.0);
 
   delay(3000);
   
