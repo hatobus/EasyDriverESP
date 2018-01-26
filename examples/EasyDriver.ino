@@ -1,11 +1,11 @@
 #include <EasyDriver.h>
 
 #define stp 2
-#define dir 15
+#define dir 3
 #define MS1 4
 #define MS2 5
 
-EasyDriver ed(stp, MS1, MS2, dir, 1.8);
+EasyDriver EZDRV(stp, MS1, MS2, dir, 1.8);
 
 void setup() {
   // put your setup code here, to run once:
@@ -27,24 +27,24 @@ void setup() {
     // Default Both Value is HIGH.
     //
 
-    ed.set_microstep(LOW, LOW);
+    EZDRV.set_microstep(LOW, LOW);
 }
-
+  
 void loop() {
   // put your main code here, to run repeatedly:
   // Rotate 5sec 120 rpm
-    ed.Motor_Drive_Time(120, 5.0);
+    EZDRV.Motor_Drive_Time(120, 5.0);
 
-  delay(3000);
+    delay(3000);
 
   // Rotate 5 times 120 rpm
-  ed.Motor_Drive_Rotate(120, 5.0);
+    EZDRV.Motor_Drive_Rotate(120, 5.0);
 
   // Inverse rotate direction 
-  ed.Rotate_INV();
+    EZDRV.Rotate_INV();
 
-  ed.Motor_Drive_Time(120, 5.0);
+    EZDRV.Motor_Drive_Time(120, 5.0);
 
-  delay(3000);
+    delay(3000);
   
 }
