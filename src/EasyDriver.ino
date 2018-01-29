@@ -27,7 +27,7 @@ void setup() {
     // Default Both Value is HIGH.
     //
 
-    EZDRV.set_microstep(LOW, LOW);
+    EZDRV.set_microstep(HIGH, HIGH);
 }
 
 void loop() {
