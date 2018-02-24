@@ -42,5 +42,5 @@ This library able to use Arduino and ESP series boards.
 
 ### platformio
 
-
+Sorry ;-( Don't registed platformio library now.
 
